@@ -6,7 +6,7 @@ import { MONGO_URI } from './models/config';
 app.use(express.json());
 
 
-app.use('/submitForm', async (req, res) => {
+app.post('/submitForm', async (req, res) => {
     try {
         const contact = await ContactUs.create({
             contactFirstName: req.body.contactFirstName,
@@ -28,6 +28,14 @@ app.use('/submitForm', async (req, res) => {
     }
 });
 
+
+app.get('/', async (req, res) => {
+   
+        res.status(201).json({
+            message: 'Welcome',
+        });
+   
+});
 
 mongoose.connect(MONGO_URI)
     .then(() => {
