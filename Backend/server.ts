@@ -9,12 +9,12 @@ app.use(express.json());
 app.post('/submitForm', async (req, res) => {
     try {
         const contact = await ContactUs.create({
-            contactFirstName: req.body.contactFirstName,
-            contactLastName: req.body.contactLastName,
-            contactEmail: req.body.contactEmail,
-            contactCompany: req.body.contactCompany,
-            contactHear: req.body.contactHear,
-            contactMessage: req.body.contactMessage,
+            contactFirstName: req.body.firstName,
+            contactLastName: req.body.lastName,
+            contactEmail: req.body.email,
+            contactCompany: req.body.companyName,
+            contactHear: req.body.hearAboutUs,
+            contactMessage: req.body.message,
         });
 
         res.status(201).json({
