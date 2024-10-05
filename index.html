@@ -260,12 +260,13 @@
 
             $("#contactForm").on("submit", function (event) {
                 let fd = $("#contactForm").serialize();
-                fd = JSON.parse('{"' + decodeURI(fd.replace(/&/g, "\",\"").replace(/=/g, "\":\"")) + '"}');
+               // fd = JSON.parse('{"' + decodeURI(fd.replace(/&/g, "\",\"").replace(/=/g, "\":\"")) + '"}');
                 $.ajax({
                     type: "POST",
                     dataType: "json",
                     url: "https://contact-api.orioncor.ca/submitForm",
                     data: fd,
+                    contentType: 'application/json;charset=UTF-8',
                     success: function (res) {
                         $('.alert').addClass('d-none');
                         if (res.status) {
