@@ -1,11 +1,11 @@
 import express from 'express';
 var cors = require('cors')
 var app = express()
-app.use(cors())
+//app.use(cors())
 const ContactUs = require('./models/ContactUs');
 import mongoose from 'mongoose';
 import { MONGO_URI } from './models/config';
-//app.use(express.json());
+app.use(express.json());
 
 
 
