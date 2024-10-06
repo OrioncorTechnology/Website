@@ -1,15 +1,16 @@
 import express from 'express';
-var cors = require('cors')
-var app = express()
-//app.use(cors())
-const ContactUs = require('./models/ContactUs');
+import cors from 'cors';
 import mongoose from 'mongoose';
 import { MONGO_URI } from './models/config';
+const ContactUs = require('./models/ContactUs');
+
+const app = express();
+
+// Enable CORS for specific origins or for all origins (uncomment one of the two options)
+app.use(cors());  // Allows all origins
+// app.use(cors({ origin: 'https://www.orioncor.ca' }));  // Allows only specific origin
+
 app.use(express.json());
-
-
-
-
 
 app.post('/submitForm', async (req, res) => {
     try {
@@ -27,19 +28,17 @@ app.post('/submitForm', async (req, res) => {
             contact,
         });
     } catch (error) {
-        res.status(201).json({
-            message: error
+        res.status(500).json({
+            message: 'Failed to create contact',
+            error: error.message || error,
         });
     }
 });
 
-
 app.get('/', async (req, res) => {
-   
-        res.status(201).json({
-            message: 'Welcome',
-        });
-   
+    res.status(200).json({
+        message: 'Welcome',
+    });
 });
 
 mongoose.connect(MONGO_URI)
@@ -50,10 +49,6 @@ mongoose.connect(MONGO_URI)
         console.error('Connection error:', error);
     });
 
-
-
 app.listen(4000, () => {
-    console.log('App is listnening to the port 4000')
+    console.log('App is listening on port 4000');
 });
-
-
