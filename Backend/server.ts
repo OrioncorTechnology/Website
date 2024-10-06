@@ -1,9 +1,14 @@
 import express from 'express';
-const app = express();
+var cors = require('cors')
+var app = express()
+app.use(cors())
 const ContactUs = require('./models/ContactUs');
 import mongoose from 'mongoose';
 import { MONGO_URI } from './models/config';
-app.use(express.json());
+//app.use(express.json());
+
+
+
 
 
 app.post('/submitForm', async (req, res) => {
