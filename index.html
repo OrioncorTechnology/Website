@@ -269,7 +269,7 @@ Orioncor aims to transform the offshore oil and gas sector by developing an AI-p
             processData: false,
             success: function (res) {
                 $('.alert').addClass('d-none');
-                if (res.statusCode == 200) {
+                if (res.status == "success") {
                     $('#contact-success').removeClass('d-none');
                     $('.form-control').val('');
                 } else {
