@@ -35,6 +35,9 @@
         }
     </style>
 
+    <!-- Google reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LebOcMsAAAAAA1dLBnZeXv1VfOMcUuU1Cz0o4rF"></script>
+
 </head>
 
 <body>
@@ -251,41 +254,49 @@ Orioncor aims to transform the offshore oil and gas sector by developing an AI-p
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script>
-       $(document).ready(function () {
+        $(document).ready(function () {
 
-    $("#contactForm").on("submit", function (event) {
-        // Convert form data to JSON object
-        let fd = {};
-        $("#contactForm").serializeArray().forEach(function(field) {
-            fd[field.name] = field.value;
+            $("#contactForm").on("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                grecaptcha.ready(function () {
+                    grecaptcha.execute('6LebOcMsAAAAAA1dLBnZeXv1VfOMcUuU1Cz0o4rF', { action: 'submit' }).then(function (token) {
+                        // Convert form data to JSON object
+                        let fd = {};
+                        $("#contactForm").serializeArray().forEach(function (field) {
+                            fd[field.name] = field.value;
+                        });
+
+                        // Add reCAPTCHA token to the form data
+                        fd['recaptcha_token'] = token;
+
+                        $.ajax({
+                            type: "POST",
+                            dataType: "json",
+                            url: "https://edk6fo2dwk.execute-api.us-east-1.amazonaws.com/contact",
+                            data: JSON.stringify(fd), // Convert data to JSON string
+                            contentType: "application/json",
+                            processData: false,
+                            success: function (res) {
+                                $('.alert').addClass('d-none');
+                                if (res.status == "success") {
+                                    $('#contact-success').removeClass('d-none');
+                                    $('.form-control').val('');
+                                } else {
+                                    $('#contact-error-message').html(res.message);
+                                    $('#contact-failed').removeClass('d-none');
+                                }
+                            },
+                            error: function (responseData, textStatus, errorThrown) {
+                                $('#contact-error-message').html('Error: Something went wrong!');
+                                $('#contact-failed').removeClass('d-none');
+                            }
+                        });
+                    });
+                });
+            });
+
         });
-
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: "https://edk6fo2dwk.execute-api.us-east-1.amazonaws.com/contact",
-            data: JSON.stringify(fd), // Convert data to JSON string
-            contentType: "application/json",
-            processData: false,
-            success: function (res) {
-                $('.alert').addClass('d-none');
-                if (res.status == "success") {
-                    $('#contact-success').removeClass('d-none');
-                    $('.form-control').val('');
-                } else {
-                    $('#contact-error-message').html(res.message);
-                    $('#contact-failed').removeClass('d-none');
-                }
-            },
-            error: function (responseData, textStatus, errorThrown) {
-                $('#contact-error-message').html('Error: Something went wrong!');
-                $('#contact-failed').removeClass('d-none');
-            }
-        });
-        event.preventDefault(); // Prevent default form submission
-    });
-
-});
 
     </script>
 
