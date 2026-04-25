@@ -49,28 +49,28 @@
         </div>
     </div>
 
-    <header class="bg-white">
-        <div class="pt-lg-5 pt-4">
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-lg-6" data-aos="fade-up">
-                        <h2 class="fw-bolder">Empowering Next-Gen Cybersecurity</h2>
-                        <h4 class="fw-bolder">Where Cyber Intelligence Meets Artificial Intelligence</h4>
-                        <h3 class="fw-bolder"></h3>
-                        <p class="mb-5">We revolutionize the Cybersecurity industry by providing an AI powered comprehensive IT
-                            platform tailored for co-existence by democratizing data and empower preventive threat intelligence.</p>
-                    </div>
-                    <div class="col-lg-6 text-end" data-aos="fade-up" data-aos-delay="100">
-                        <img class="img-fluid"
-                            src="images/header.jpg"
-                            alt="..." style="border-radius: 20px;">
-                    </div>
-                </div>
-            </div>
-        </div>
+    <header class="position-relative overflow-hidden" style="height: 60vh;">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline class="position-absolute w-100 h-100" style="object-fit: cover; z-index: -2; top: 0; left: 0;">
+            <!-- Note: Place your video file in the images folder and rename it to 'background-video.mp4' -->
+            <source src="images/background-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </header>
 
     <main class="mt-5">
+
+        <!-- Header Text Moved Here -->
+        <section class="text-center pt-0 pb-5">
+            <div class="container">
+                <h2 class="fw-bolder display-5 text-dark" data-aos="fade-up">Empowering Next-Gen Cybersecurity</h2>
+                <h4 class="fw-bolder text-muted mb-4" data-aos="fade-up" data-aos-delay="100">Where Cyber Intelligence Meets Artificial Intelligence</h4>
+                <p class="lead mx-auto text-secondary" style="max-width: 800px;" data-aos="fade-up" data-aos-delay="200">
+                    We revolutionize the Cybersecurity industry by providing an AI powered comprehensive IT
+                    platform tailored for co-existence by democratizing data and empower preventive threat intelligence.
+                </p>
+            </div>
+        </section>
 
         <section class="bg-light">
             <div class="container">
@@ -89,57 +89,70 @@ Orioncor aims to transform the offshore oil and gas sector by developing an AI-p
             </div>
         </section>
 
-        <section class="text-center bg-white">
+        <section class="text-center bg-white py-5">
             <div class="container">
-                <h2 class="fw-bolder">Platform Integrations</h2>
-                <p class="mb-5"> Orioncor platform provides AI-powered cybersecurity intelligence, advanced data interoperability, scalability, and real-time threat detection, enabling safer and more efficient offshore operations. It enhances situational awareness and decision-making across offshore drilling and production systems, subsea communication networks, pipeline and asset monitoring, port and logistics operations, regulatory compliance analytics, and IoT-enabled industrial control systems.
+                <h2 class="fw-bolder mb-3">Industries & Protected Assets</h2>
+                <p class="mb-5 text-muted mx-auto" style="max-width: 800px;">
+                    Orioncor provides AI-powered cybersecurity intelligence, ensuring the safety, compliance, and resilience of critical infrastructure across various offshore and industrial sectors.
                 </p>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card mb-4 rounded-3 shadow-sm bg-dark">
-                            <div class="card-body text-white">
-                                Offshore Operations and Production Control Systems
+                <div class="row g-4">
+                    <!-- Industry 1 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden text-start">
+                            <img src="images/industry_offshore.png" class="card-img-top" alt="Offshore Operations" style="height: 220px; object-fit: cover;">
+                            <div class="card-body p-4 bg-dark text-white d-flex flex-column">
+                                <h5 class="card-title fw-bold mb-3">Offshore Operations</h5>
+                                <p class="card-text text-light small mb-0">Protecting offshore drilling, production control systems, and maritime logistics from advanced cyber threats.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="card mb-4 rounded-3 shadow-sm bg-dark">
-                            <div class="card-body text-white">
-                                Subsea Communication Networks and Cable Monitoring
+                    <!-- Industry 2 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden text-start">
+                            <img src="images/industry_subsea.png" class="card-img-top" alt="Subsea Networks" style="height: 220px; object-fit: cover;">
+                            <div class="card-body p-4 bg-dark text-white d-flex flex-column">
+                                <h5 class="card-title fw-bold mb-3">Subsea Networks</h5>
+                                <p class="card-text text-light small mb-0">Securing subsea communication networks, cable monitoring systems, and vital underwater assets.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="card mb-4 rounded-3 shadow-sm bg-dark">
-                            <div class="card-body text-white">
-                                Remote Asset Management and Condition Monitoring
+                    <!-- Industry 3 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden text-start">
+                            <img src="images/industry_remote.png" class="card-img-top" alt="Remote Asset Management" style="height: 220px; object-fit: cover;">
+                            <div class="card-body p-4 bg-dark text-white d-flex flex-column">
+                                <h5 class="card-title fw-bold mb-3">Remote Asset Management</h5>
+                                <p class="card-text text-light small mb-0">Defending condition monitoring and remote asset management interfaces from unauthorized external access.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="card mb-4 rounded-3 shadow-sm bg-dark">
-                            <div class="card-body text-white">
-                                Operational Data Analytics and Risk Intelligence
+                    <!-- Industry 4 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden text-start">
+                            <img src="images/industry_analytics.png" class="card-img-top" alt="Operational Data Analytics" style="height: 220px; object-fit: cover;">
+                            <div class="card-body p-4 bg-dark text-white d-flex flex-column">
+                                <h5 class="card-title fw-bold mb-3">Data Analytics & Intelligence</h5>
+                                <p class="card-text text-light small mb-0">Ensuring absolute data integrity for operational risk intelligence and regulatory compliance analytics.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="card mb-4 rounded-3 shadow-sm bg-dark">
-                            <div class="card-body text-white">
-                                Pipeline and Energy Supply Management Systems
+                    <!-- Industry 5 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden text-start">
+                            <img src="images/industry_pipeline.png" class="card-img-top" alt="Pipeline Management" style="height: 220px; object-fit: cover;">
+                            <div class="card-body p-4 bg-dark text-white d-flex flex-column">
+                                <h5 class="card-title fw-bold mb-3">Pipeline Management</h5>
+                                <p class="card-text text-light small mb-0">Monitoring and protecting critical pipeline infrastructure and complex energy supply management systems.</p>
                             </div>
                         </div>
-                        <div class="card mb-4 rounded-3 shadow-sm bg-dark">
-                            <div class="card-body text-white">
-                                IoT Integration for Industrial Equipment and Sensors
-                            </div>
-                        </div>
-
                     </div>
-                    <div class="col-lg-4">
-                        <div class="card mb-4 rounded-3 shadow-sm bg-dark">
-                            <div class="card-body text-white">
-                                Simulation and Digital Twin Testing Environments
+                    <!-- Industry 6 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden text-start">
+                            <img src="images/industry_iot.png" class="card-img-top" alt="IoT Integration" style="height: 220px; object-fit: cover;">
+                            <div class="card-body p-4 bg-dark text-white d-flex flex-column">
+                                <h5 class="card-title fw-bold mb-3">IoT & Industrial Sensors</h5>
+                                <p class="card-text text-light small mb-0">Safeguarding IoT integrations, industrial equipment, and dense sensor networks from edge to cloud.</p>
                             </div>
                         </div>
                     </div>
